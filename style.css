@@ -1,0 +1,230 @@
+body{
+  background-color: #212221;
+  color: #ddedf4;
+}
+
+button{
+  background-color: #44449b;
+  border-color: #44449b;
+  border-radius: 10px;
+  color: #05f4b7;
+  transition: all 0.2s ease-out;
+}
+
+button:hover{
+  background-color: #1f3044;
+  border-color: #1f3044;
+  color: #fb9039;
+}
+
+.clicked{
+  background-color: #1f3044;
+  border-color: #1f3044;
+  color: #fb9039;
+}
+
+
+input{
+  background-color: #1f3044;
+  border-color: #1f3044;
+  color: #646c79;
+}
+
+input:focus{
+  color: #fb9039;
+}
+
+.save{
+  display: none;
+}
+
+.alive-cell{
+  background-color: #2f0068 !important;
+  transform: rotateZ(90deg);
+}
+
+@media screen and (min-width: 600px){
+  .app-layout{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: calc(30% - 5px) calc(70% - 5px);
+    grid-template-rows: 55% 5%;
+    grid-template-areas: "control-panel life-grid" "control-panel status-bar";
+    min-height: 100vh;
+  }
+
+  .control-panel{
+    background-color: #212221;
+    display: flex;
+    flex-direction: column;
+    grid-area: control-panel;
+  }
+
+  .action-buttons{
+    display: none;
+  }
+
+
+}
+
+button, input{
+  margin: 5px;
+}
+
+.life-grid{
+  border: 2px solid #e1e2e2;
+  grid-area: life-grid;
+  min-height: 90vh;
+  max-height: 90vh;
+}
+
+.action-buttons{
+  display: none;
+}
+
+.control-panel > div{
+  border-top: 1px solid #fb9039;
+  flex: 1 1 auto;
+  padding: 5px;
+  margin: 5px;
+}
+
+.grid-settings{
+  display: flex;
+  flex-direction: column;
+}
+
+.control{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+.control button{
+  padding: 0;
+  flex: 1 1 20px;
+}
+
+.itterator{
+  display: flex;
+  flex-direction: column;
+}
+
+.speed-control{
+  display: flex;
+  flex-direction: column;
+}
+
+.speed-buttons {
+  display: flex;
+}
+
+.speed-buttons button{
+  padding: 0;
+  flex: 1 1 20px;
+}
+
+.status-bar{
+  display: flex;
+  padding: 0;
+  align-items: baseline;
+  grid-area: status-bar;
+}
+
+.status-bar h5{
+  border-bottom: 1px solid #fb9039;
+  color: #fb9039;
+  flex: 1 1 auto;
+}
+
+#game-of-life{
+  position: relative;
+  max-height: 80vh;
+  min-height: 80vh;
+  border: 1px solid green;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+.YContainer{
+  display: flex;
+  flex: 1 1 0px;
+  align-items: stretch;
+  align-self: stretch;
+  justify-content: space-between;
+  align-content: stretch;
+}
+
+.Cell{
+  background-color: #d5d5d5;
+  padding-top: 2%;
+  padding-left: 2%;
+  flex: 1 1 0px;
+  align-self: stretch;
+  margin: 2px;
+  border: solid 1px black;
+  transition: all 0.2s ease-in-out;
+  border-top-right-radius: 20%
+}
+
+
+@media screen and (max-width: 600px){
+  .app-layout{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: calc(80% - 5px) calc(10% - 5px);
+    grid-template-columns: 1fr;
+    grid-template-areas: "life-grid" "status-bar";
+    width: 100%;
+  }
+
+  .control-panel{
+    position: absolute;
+    background-color: #212221;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 1;
+    transform: translateY(-125%);
+    overflow: hidden;
+    transition: all 0.3s linear;
+  }
+
+  .life-grid{
+    display: flex;
+    max-width: 98vw;
+    min-width: 98vw;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  .action-buttons{
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-around;
+  }
+
+  .action-buttons button{
+    flex: 1 1 20px;
+    margin: 5px;
+  }
+
+  .control-panel > div{
+    border: 1px solid #fb9039;
+  }
+
+  .control{
+    display: none;
+  }
+
+
+  .slide-up{
+    transform: translateY(0);
+    z-index: 0;
+  }
+
+}

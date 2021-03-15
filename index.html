@@ -1,0 +1,66 @@
+<!DOCTYPE HTML5>
+<html>
+  <head>
+    <title>Game Of Life!</title>
+    <meta charset="utf8"/>
+    <link rel="stylesheet" href="style.css"/> 
+  </head>
+
+  <body>
+    <div class="app-layout">
+      
+      <div class="life-grid">
+        <div id="game-of-life"></div>
+        <div class="action-buttons">
+          <button class="start-stop">Start</button>
+          <button id="settings-button">Settings</button>
+          <button class="randomize">Randomize</button>
+        </div>
+      </div>
+      
+      <div id="control-panel" class="control-panel">
+
+        <div class="grid-settings">
+          <h5>Set the grid dimensions:</h5>
+          <input id="X" type="number" min="0" placeholder="cells on X axis">
+          <input id="Y" type="number" min="0" placeholder="cells on Y axis">
+          <button id="set-dimension">Set</button>
+        </div>
+        
+        <div class="control">
+          <button class="start-stop">Start</button>
+          <button class="randomize">Randomize</button>
+        </div>
+        
+        <div class="itterator">
+          <h5>itterate:</h5>
+          <input id="itterations" type="number" min="0" placeholder="itterations"/>
+          <button id="itterate">Itterate</button>
+        </div>
+        
+        <div class="speed-control">
+          <h5>Select Speed:</h5>
+          <div class="speed-buttons">
+            <button id="x1">x1</button>
+            <button id="x2">x2</button>
+            <button id="x4">x4</button>
+            <button id="x16">x16</button>
+          </div>
+        </div>
+        
+        <div class="save">
+          saving the result to a file.
+        </div>
+
+      </div>
+
+      <div class="status-bar">
+        <h5 id ="speed-label">Speed: x1 </h5>
+        <h5 id="dimensions-label">Dimonsion: <i></i></h5>
+        <h5 id="itterations-label">Itterations: <i>0</i>/<i>0</i></h5>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
