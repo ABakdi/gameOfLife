@@ -194,7 +194,7 @@ function itterate(ittr, _callback){
 }
 
 //populate the area with cells
-setGridDimonsion(20, 20)
+setGridDimonsion(50, 50)
 
 //handler to control the number of cells by setting Xcells and Ycells
 function setGridDimonsion(Xcells, Ycells){
